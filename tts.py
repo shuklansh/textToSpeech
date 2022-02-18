@@ -1,23 +1,25 @@
 import pyttsx3
 
 x = True
-
 text = pyttsx3.init()
 
-text.say("what do you want me to say?")
-text.runAndWait()
+
+def speak(s):
+    text.say(s)
+    text.runAndWait()
+
+
+speak("what do you want me to say")
+
 ans = input("enter:")
 
-while x==True:
-    if(ans!="nothing"):
-        text.say(ans)
-        text.runAndWait()
-        text.say("anything else?")
-        text.runAndWait()
+while x:
+    if ans != "nothing":
+        speak(ans)
+        speak("anything else?")
         ans = input("enter:")
 
     else:
 
-        text.say("alright, catch ya later")
-        text.runAndWait()
+        speak("alright, catch ya later")
         x = False
