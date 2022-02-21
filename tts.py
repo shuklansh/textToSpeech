@@ -2,6 +2,9 @@ import pyttsx3
 
 x = True
 text = pyttsx3.init()
+text = pyttsx3.init()
+voices = text.getProperty('voices')
+text.setProperty('voice', voices[1].id) #1 for female voice, 0 for male voice
 
 
 def speak(s):
